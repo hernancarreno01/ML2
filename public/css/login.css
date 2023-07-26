@@ -1,0 +1,31 @@
+.log-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.log-form div{
+    padding: 5px 0px;
+}
+
+.log-form input{
+    border: none;
+    padding: 10px;
+}
+
+.log-form button:hover{
+    background-color: rgb(22, 171, 54);
+    border-radius: 10px;
+}
+
+.log-form button{
+    color: #fff;
+    background-color: var(--celeste);
+    padding: 10px 20px;
+    border: none;
+    transition: all 0.5s;
+    border-radius: 20px;
+}
