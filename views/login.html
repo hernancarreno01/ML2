@@ -54,13 +54,14 @@
     <main>
         <form class="log-form" action="/" method="GET">
             <div class="log-usuario">  
-                <label for="nombreUsuario"></label>
-                <input type="text" name="usuario" id="nombreUsuario" placeholder="Ingresá tu usuario">
-            </div>
-            <div class="log-con">
-                <label for="contrasenia"></label>
-                <input type="password" name="contrasenia" id="contrasenia" placeholder="Ingresá tu contraseña">
-            </div>
+                <div class="inputGroup">
+                    <input type="text" required="" name="usuario" id="nombreUsuario" autocomplete="off">
+                    <label for="name">Ingresá ID de usuario</label>
+                </div>
+                <div class="inputGroup">
+                    <input type="password" required="" name="password" id="password" autocomplete="off">
+                    <label for="name">Ingresá tu contraseña</label>
+                </div>
             <div class="log-boton">
                 <button type="submit">Enviar</button>
             </div>
