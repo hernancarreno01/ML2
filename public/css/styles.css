@@ -23,9 +23,18 @@ body{
     background-color: var(--gris-claro);
 }
 
-.main-header{
+header {
     background-color: var(--amarillo);
     padding: 20px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+
+}
+
+.main-header{
+    background-color: var(--amarillo);
+    padding: 10px;
 }
 
 .main-header-top-bar{
@@ -35,10 +44,11 @@ body{
     align-items: center;
 }
 
-.logo{
+.logo {
     width: 50%;
-    padding: 10px 0px;
-}
+    padding: 10px 0;
+    margin: 0 auto; /* Alinea el elemento en el centro horizontalmente */
+  }
 
 .buscador{
     display: flex;
@@ -60,7 +70,7 @@ body{
 
 .icono-buscador{
     background-color: #FFF;
-    border-left: 1px solid var(--gris-oscuro);
+    border-left: 2px solid black;
     color: var(--gris-oscuro);
     font-weight: bold;
     padding-left: 3px;
@@ -108,7 +118,7 @@ main section{
 }
 
 .banner-main{
-    width: 100vw;
+    width: 100%;
 }
 
 .productos{
@@ -130,6 +140,39 @@ article:hover{
 article img{
     width: 100%;
 }
+
+.imagen-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip {
+    visibility: hidden;
+    background-color: rgba(255, 242, 0, 0.083); /* Ajusta la opacidad y color del fondo */
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.891);
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 5px;
+    position: absolute;
+    z-index: 2; /* Asegura que la descripción esté por encima de la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .imagen-container:hover .tooltip {
+    visibility: visible;
+  }
+  
+  
 
 .productos-caja{
     border-top: 1px solid #ebebeb;
@@ -167,7 +210,11 @@ article:hover .fa-truck{
 }
 
 .titulares{
-    font-size: 24px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-bottom: rgb(255, 255, 255) solid 3px;
+    border-top: rgb(255, 255, 255) solid 3px;;
 }
 
 .precios{
@@ -237,13 +284,34 @@ article:hover .descripciones{
     transition: all 0.3s;
 }
 
+.main-footer {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    font-size: 0.7em;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+  }
+
 .main-footer section i:hover{
-    color: goldenrod;
+    color: rgb(38, 218, 32);
+    transform: scale(1.2);
+}
+
+.centered-text {
+    font-weight: 600;
+    font-size: 0.8em;
 }
 
 @media (min-width: 361px) {
     .main-header-top-bar{
         justify-content: space-around;
+    }
+
+    .input{
+        font-size: 9px;
     }
 
     .logo{
@@ -256,6 +324,7 @@ article:hover .descripciones{
 
     .texto-header{
         width: 37%;
+        font-size: 8px;
     }
 
     .burger-menu{
@@ -265,6 +334,7 @@ article:hover .descripciones{
     .main-navbar{
         display: flex;
         justify-content: space-between;
+        font-size: 12px;
     }
 
     .productos{
@@ -274,11 +344,21 @@ article:hover .descripciones{
     article{
         width: 45%;
     }
+    .main-footer {
+        font-size: 0.9em;
+
+      }
+
 }
 
 @media (min-width: 769px) {
     .main-header-top-bar{
         justify-content: space-between;
+    }
+
+    .texto-header{
+        width: 37%;
+        font-size: 12px;
     }
     
     .main-navbar ul{
@@ -299,12 +379,11 @@ article:hover .descripciones{
         width: 20%;
     }
 
-    .main-footer{
+    .main-footer {
         display: flex;
-        flex-direction: row;
+        justify-content: center; /* Centra el contenido horizontalmente */
         flex-wrap: wrap;
-        justify-content: space-between;
-    }
+      }
 
     .main-footer section{
         width: 30%;
@@ -313,4 +392,16 @@ article:hover .descripciones{
     .copy{
         padding-top: 15px;
     }
-}
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Divide el footer en 3 columnas iguales */
+        grid-gap: 20px; /* Espacio entre las columnas y filas */
+        max-width: 900px; /* Ajusta el ancho máximo según tus preferencias */
+        margin: 0 auto; /* Centra el grid horizontalmente */
+      }
+      .container {
+        grid-column: 1 / 4; /* Ocupa las 3 columnas completas en la segunda fila */
+        text-align: center;
+      }
+    }
